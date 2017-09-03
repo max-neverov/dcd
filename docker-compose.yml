@@ -1,0 +1,8 @@
+version: '2'
+services:
+  dcd:
+    build: .
+    ports:
+     - "8080:8080"
+#   the same as docker run --cpuset-cpus="0"
+    cpuset: "0"
