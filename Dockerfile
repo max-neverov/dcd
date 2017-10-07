@@ -7,4 +7,5 @@ RUN apk add --no-cache coreutils
 
 EXPOSE 8080
 
-ENTRYPOINT exec java -Djava.security.egd=file:/dev/./urandom -jar dcd.jar
+# Use exec form to run java as PID 1
+ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","dcd.jar"]
